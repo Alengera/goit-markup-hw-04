@@ -14,6 +14,9 @@
   --background-color: #ffffff;
   --team-background-color: #f4f4fd;
   --subtle-background-color: #e7e9fc;
+  --subtle-text-color: #8e8f99;
+  --background-color-logo-dark: rgba(255, 255, 255, 0.1);
+  --footer-logo-active: #31d0aa;
 }
 body {
   font-family: var(--primary-font);
@@ -156,15 +159,24 @@ button {
   line-height: 1.07;
   letter-spacing: 0.02em;
 }
-/* !!!!!!Temporary Background color!!!!! */
+
 .hero {
+  max-width: 1440px;
   padding-top: 188px;
   padding-bottom: 188px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1440px;
-  background-color: var(--headings-color);
+
   text-align: center;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/people-office.jpg);
+  background-color: var(--headings-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-button {
@@ -175,10 +187,13 @@ button {
   border: 1px solid transparent;
 
   font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5;
   color: var(--background-color);
   background-color: var(--brand-color);
   cursor: pointer;
   border-radius: 4px;
+  letter-spacing: 0.04em;
 }
 .hero-button:hover {
   background-color: var(--accent-color);
@@ -188,6 +203,13 @@ button {
 .features {
   padding-top: 120px;
   padding-bottom: 120px;
+}
+.features-box {
+  height: 112px;
+  padding: 24px 100px;
+  margin-bottom: 8px;
+  background-color: var(--team-background-color);
+  border-radius: 4px;
 }
 
 .section-subtitle {
@@ -255,23 +277,127 @@ button {
 .team-subtitle {
   margin-bottom: 8px;
 }
+/* =======SOCIALS============ */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+.socials-item {
+  width: 40px;
+  height: 40px;
+}
+.socials-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--brand-color);
+  fill: var(--background-color);
+  border-radius: 50%;
+}
+.socials-link:hover {
+  background-color: var(--accent-color);
+}
+.socials-icon {
+  width: 16px;
+  height: 16px;
+}
+/* ========SECTION 4 ========== */
+.customers {
+  padding-top: 130px;
+  padding-left: 156px;
+  padding-right: 156px;
+  padding-bottom: 120px;
+}
+.customers-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.customers-item {
+  width: 168px;
+  height: 88px;
+  padding: 16px 32px;
+  border: 1px solid var(--subtle-text-color);
+  border-radius: 4px;
+}
+.customers-item:hover {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.customers-icon {
+  width: 104px;
+  height: 56px;
+}
+.customers-link {
+  fill: var(--subtle-text-color);
+}
+
+.customers-link:hover,
+.customers-link:focus {
+  fill: var(--accent-color);
+}
 /* =========FOOTER================= *  
 
 /* !!!!!!!!!!!!!!!!!===Temporarily background====== */
 .footer {
   background-color: var(--headings-color);
+}
+.footer-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.footer-text-container {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+
 .logo-second {
   color: var(--team-background-color);
 }
-.footer-text {
+.footer-description {
   width: 264px;
   color: var(--subtle-background-color);
   line-height: 1.5;
   letter-spacing: 0.02em;
   margin-top: 16px;
+}
+.socials-container {
+  margin-left: 120px;
+  padding-top: 100px;
+  padding-bottom: 130px;
+}
+.social-media-text {
+  margin-bottom: 16px;
+
+  color: var(--background-color);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.socials-footer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.socials-link-footer {
+  background-color: var(--background-color-logo-dark);
+  fill: var(--subtle-background-color);
+}
+.socials-link-footer:hover {
+  background-color: var(--footer-logo-active);
+}
+.socials-link-footer:focus {
+  background-color: var(--footer-logo-active);
+}
+.socials-icon-footer {
+  width: 24px;
+  height: 24px;
 }
 
 /* =======PORTFOLIO PAGE============= */
@@ -306,6 +432,8 @@ button {
 .portfolio-button:focus {
   color: var(--background-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 .portfolio-list-name {
   margin-bottom: 8px;
@@ -333,4 +461,7 @@ button {
 }
 .portfolio-list-item {
   flex-basis: calc((100% - 48px) / 3);
+}
+.portfolio-list-item:hover {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
